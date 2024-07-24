@@ -1,7 +1,74 @@
+:root {
+  --flow-gap: 1em;
+  --clr-primary-1: black;
+
+  --fs-1: 16px;
+  --fs-2: 12px;
+}
+
+*,
+*::before *::after {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
-
+img {
+  max-width: 100%;
+}
+.flow-right > * + * {
+  margin-right: var(--flow-gap);
+}
+body {
+  padding: 1em;
+}
+.container {
+  max-width: 80rem;
+  width: 90%;
+  margin: 0 auto;
+}
+.container--card {
+  display: flex;
+  gap: var(--flow-gap);
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container--card .card {
+  flex-basis: 45%;
+  border: 3px solid var(--clr-primary-1);
+  line-height: 1em;
+  text-align: left;
+  justify-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.card-info {
+  font-weight: bold;
+  padding: 0 calc(var(--flow-gap));
+}
+.card-title {
+  font-size: var(--fs-1);
+}
+.card-description {
+  font-weight: 200;
+  font-size: var(--fs-2);
+}
+.skillset-container {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--flow-gap) / 3);
+  padding: 0 calc(var(--flow-gap));
+}
+.skill-set {
+  flex-basis: auto;
+  padding: calc(var(--flow-gap) / 3) calc(var(--flow-gap));
+  border-radius: calc(var(--flow-gap) / 3);
+  font-size: var(--fs-2);
+  font-weight: bold;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
